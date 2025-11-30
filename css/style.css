@@ -48,9 +48,23 @@ img {
 
 .showcase {
   width: 100%;
-  height: 100vh;
+  height: 93vh;
   position: relative;
   background: url('../images/netflix background.jpg') no-repeat center center/cover;
+}
+
+.showcase::before {
+  content: "";
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  background: linear-gradient(
+    to top,
+    rgba(0,0,0,0.8) 0%,
+    rgba(0,0,0,0.4) 50%,
+    rgba(0,0,0,0.2) 100%
+  );
+  z-index: 1;
 }
 
 .showcase-top {
@@ -59,6 +73,8 @@ img {
   justify-content: flex-start;
   padding-left: 3rem;
   height: 90px;
+  position: relative;
+  z-index: 2; /* ensures logo and sign-in sit above overlay */
 }
 
 .showcase-top img {
@@ -83,7 +99,8 @@ img {
   justify-content: center;
   align-items: center;
   text-align: center;
-  margin-top: 9rem;
+  margin-top: 7rem;
+  z-index: 2;
 }
 
 .btn {
