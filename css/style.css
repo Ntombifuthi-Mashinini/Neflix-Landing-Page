@@ -137,3 +137,8 @@ img {
   padding: 0.8rem 1.3rem;
   text-transform: uppercase;
 }
+.feature-icon {
+  width: 50px;
+  height: auto;
+  margin-bottom: 0.5rem;
+}
