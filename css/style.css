@@ -1,5 +1,6 @@
 :root {
   --primary-color: #e50914;
+  --dark-color: #141414;
 }
 
 * {
@@ -9,8 +10,6 @@
 }
 
 html, body {
-  margin: 0;
-  padding: 0;
   height: 100%;
   background: #000;
   color: #999;
@@ -58,12 +57,7 @@ img {
   position: absolute;
   top: 0; left: 0;
   width: 100%; height: 100%;
-  background: linear-gradient(
-    to top,
-    rgba(0,0,0,0.8) 0%,
-    rgba(0,0,0,0.4) 50%,
-    rgba(0,0,0,0.2) 100%
-  );
+  background: linear-gradient(to top, rgba(0,0,0,0.8) 0%, rgba(0,0,0,0.4) 50%, rgba(0,0,0,0.2) 100%);
   z-index: 1;
 }
 
@@ -74,7 +68,7 @@ img {
   padding-left: 3rem;
   height: 90px;
   position: relative;
-  z-index: 2; /* ensures logo and sign-in sit above overlay */
+  z-index: 2;
 }
 
 .showcase-top img {
@@ -137,8 +131,61 @@ img {
   padding: 0.8rem 1.3rem;
   text-transform: uppercase;
 }
+
+.tabs {
+  background: var(--dark-color);
+  padding: 2rem 0;
+  border-bottom: 3px solid #3d3d3d;
+}
+
+.tabs .container {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 2rem;
+  text-align: center;
+}
+  
+.tabs .container >div {
+  padding: 1rem 0;
+}
+
+.container {
+  max-width: 70%;
+  margin: auto;
+  overflow: hidden;
+  padding: 2rem;
+}
+
+.tab-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem;
+  background: #1c1c1c;
+  border-radius: 8px;
+  transition: transform 0.3s ease, border-bottom 0.3s ease;
+}
+
+/* Hover effect: scale + border under container */
+.tab-item:hover {
+  transform: scale(1.05);
+  border-bottom: 4px solid var(--primary-color);
+}
+
 .feature-icon {
   width: 50px;
   height: auto;
   margin-bottom: 0.5rem;
+  filter: drop-shadow(0 0 5px #e50914);
+}
+
+.tab-item p {
+  font-size: 1rem;
+  color: #ccc;
+  margin: 0;
+  padding: 0;
+  text-align: center;
 }
