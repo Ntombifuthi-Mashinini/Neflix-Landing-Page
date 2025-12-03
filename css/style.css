@@ -40,6 +40,7 @@ a {
   text-decoration: none;
 }
 
+/* Restrict global image rule to showcase only */
 .showcase img {
   width: 100%;
   display: block;
@@ -134,7 +135,7 @@ a {
 
 .tabs {
   background: var(--dark-color);
-  padding: 2rem 0;
+  padding: 2.5rem 1.5rem;   /* more breathing room inside the tabs section */
   border-bottom: 3px solid #3d3d3d;
 }
 
@@ -147,8 +148,10 @@ a {
   text-align: center;
 }
   
-.tabs .container >div {
-  padding: 1rem 0;
+.tabs .container > div {
+  padding: 1rem 1.5rem;     /* add horizontal padding inside each tab */
+  margin: 0 0.5rem;         /* small gap between tabs */
+  border-radius: 6px;       /* optional: soften edges */
 }
 
 .container {
@@ -168,6 +171,11 @@ a {
   margin-bottom: 1rem;
 }
 
+.text-md {
+  font-size: 1.4rem;
+  margin-bottom: 0.5rem;
+}
+
 .text-center {
   text-align: center;
 }
@@ -181,17 +189,17 @@ a {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  padding: 1rem;
   background: #1c1c1c;
-  border-radius: 8px;
-  transition: transform 0.3s ease, border-bottom 0.3s ease;
+  transition: transform 0.3s ease, border-bottom 0.3s ease, background 0.3s ease;
 }
 
 .tab-item:hover {
   transform: scale(1.05);
   border-bottom: 4px solid var(--primary-color);
+  background: #222; /* subtle hover background */
 }
 
+#tab-1-content .tab-1-content-inner,
 #tab-1-content .content-inner {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
@@ -224,6 +232,7 @@ a {
 }
 
 @media (max-width: 768px) {
+  #tab-1-content .tab-1-content-inner,
   #tab-1-content .content-inner {
     grid-template-columns: 1fr;
   }
